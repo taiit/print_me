@@ -1,0 +1,36 @@
+import os
+from google.cloud import pubsub_v1
+
+RUN_LOCAL=True
+
+if RUN_LOCAL:
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./GCDE-029b2d19307d_my_dev_acc.json"
+    os.environ["GOOGLE_CLOUD_PROJECT"] = "gcde-10000"
+
+subscriber = pubsub_v1.SubscriberClient()
+topic_name = 'projects/{project_id}/topics/{topic}'.format(
+    project_id=os.getenv('GOOGLE_CLOUD_PROJECT'),
+    topic='iotcore-topic',  # Set this to something appropriate.
+)
+
+subscription_name = 'projects/{project_id}/subscriptions/{sub}'.format(
+    project_id=os.getenv('GOOGLE_CLOUD_PROJECT'),
+    sub='iotcore-subscription',  # Set this to something appropriate.
+)
+
+# Create subscriber if not exit
+#subscriber.create_subscription(
+#    name=subscription_name, topic=topic_name)
+
+def callback(message):
+    print(message.data)
+    message.ack()
+
+future = subscriber.subscribe(subscription_name, callback)
+
+# The future returned by the call to subscriber.subscribe can be used to
+# block the current thread until a given condition obtains
+try:
+    future.result()
+except KeyboardInterrupt:
+    future.cancel()%  
