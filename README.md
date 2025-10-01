@@ -1,1 +1,1 @@
-https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZmRkMTQwZDYtYWFhOC00MGE5LWJlZmYtN2QzYzU2ZTEzYmYy%40thread.v2/0?context=%7b%22Tid%22%3a%2255c0c46d-f4aa-47c2-a63d-10e7015941db%22%2c%22Oid%22%3a%225bda9dd0-932c-48aa-b853-571ff3069a4f%22%7d
+https://www.vector.com/int/en/download/download-action/?tx_vecdownload_download%5Baction%5D=download&tx_vecdownload_download%5Bcontroller%5D=Download&tx_vecdownload_download%5BdownloadRequestId%5D=162536&cHash=dd68d8f07c4b4224212e5e0285412ab2
